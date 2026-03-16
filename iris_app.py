@@ -5,18 +5,18 @@ import pandas as pd
 from PIL import Image
 import io
 
-# =====================
+
 # Page Config
-# =====================
+
 st.set_page_config(
     page_title="Iris Recognition System",
     page_icon="👁️",
     layout="centered"
 )
 
-# =====================
+
 # Custom CSS
-# =====================
+
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;600&display=swap');
@@ -198,9 +198,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# =====================
-# Preprocessing (same as notebook)
-# =====================
+
+# Preprocessing 
+
 IMG_HEIGHT = 150
 IMG_WIDTH = 150
 NUM_CHANNELS = 1
@@ -229,9 +229,9 @@ def preprocess_image(uploaded_file):
     return img
 
 
-# =====================
+
 # Header
-# =====================
+
 st.markdown("""
 <div class="iris-header">
     <h1>👁️ IRIS RECOGNITION</h1>
@@ -240,9 +240,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# =====================
+
 # Auto-load Model (HuggingFace) & CSV (repo)
-# =====================
+
 import os
 import requests
 import tensorflow as tf
@@ -342,9 +342,9 @@ if csv_ok:
     except Exception as e:
         st.error(f"❌ Failed to load CSV: {e}")
 
-# =====================
+
 # Sidebar — Status Only
-# =====================
+
 with st.sidebar:
     st.markdown("## ⚙️ SYSTEM STATUS")
     st.markdown("---")
@@ -372,9 +372,9 @@ with st.sidebar:
 
 
 
-# =====================
+
 # Main — Image Upload & Predict
-# =====================
+
 st.markdown("### 🔍 SCAN IRIS IMAGE")
 uploaded_img = st.file_uploader(
     "Upload an iris image (JPG / PNG)",
